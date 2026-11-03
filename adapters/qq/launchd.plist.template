@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>__LABEL__</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__NODE_BIN__/node</string>
+    <string>__DIR__/gateway.js</string>
+  </array>
+  <key>WorkingDirectory</key><string>__DIR__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key><string>__NODE_BIN__:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>TZ</key><string>Asia/Shanghai</string>
+    <key>QQBOT_PORT</key><string>__PORT__</string>
+    <key>QQBOT_UNDER_LAUNCHD</key><string>1</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <!-- 非 0 退出（崩溃、看门狗 exit(1)、端口冲突 exit(3)）都拉起；无凭证 / SIGTERM 正常退出 0 不拉起 -->
+  <key>KeepAlive</key>
+  <dict>
+    <key>SuccessfulExit</key><false/>
+  </dict>
+  <key>ThrottleInterval</key><integer>10</integer>
+  <key>ProcessType</key><string>Background</string>
+  <key>StandardOutPath</key><string>__DIR__/logs/gateway.log</string>
+  <key>StandardErrorPath</key><string>__DIR__/logs/gateway.err.log</string>
+</dict>
+</plist>

@@ -1,0 +1,2 @@
+{ "name": "qqbot-bridge", "version": "2.2.0", "private": true, "type": "commonjs",
+  "dependencies": { "qrcode": "^1.5.4", "ws": "^8.18.0" } }

@@ -2,7 +2,7 @@
 
 > 把 QQ、微信等即时通讯账号，用最轻的方式接到任意 Webhook / AI Agent / 第三方服务。
 
-**状态：设计阶段（idea）。** 本仓库先记录设计思路，代码会从作者自用的 QQ / 微信桥接中逐步抽出来。
+**状态：早期。** QQ 适配器已可用（见 [adapters/qq](adapters/qq)），作者自用于 macOS 常驻；微信适配器和统一网关正在抽取中。
 
 ## 为什么要做
 
@@ -40,11 +40,12 @@ flowchart LR
 
 ## 计划
 
-- [ ] 从现有 QQ 桥接（基于官方 openclaw-qqbot 协议实现）抽出 `adapters/qq`
+- [x] QQ 适配器 `adapters/qq`（扫码绑定、本地 API、Webhook 推送、launchd 自启、心跳自愈、多机器人）
 - [ ] 抽出微信 ClawBot 适配器 `adapters/wechat`
 - [ ] 统一消息模型与本地 API
-- [ ] Webhook 推送（签名 / Bearer key、防抖、重试）
-- [ ] launchd / systemd 安装脚本，一条命令安装
+- [x] Webhook 推送（Bearer key、防抖、重试）——QQ 已实现，待抽成公共模块
+- [x] launchd 安装脚本（QQ）
+- [ ] systemd 安装脚本
 - [ ] 示例：接 Grok Bot 例程、n8n、Dify、纯脚本
 
 ## 安全原则
