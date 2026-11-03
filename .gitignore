@@ -1,6 +1,10 @@
 node_modules/
 data/
 logs/
+media/
+config.json
+*.jsonl
+qr*.png
 bind-qr.png
 *.log
 .env
